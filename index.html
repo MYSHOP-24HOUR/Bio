@@ -4,31 +4,66 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Candy ตัวอย่าง LinkBio</title>
+<title>Candy LinkBio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&family=Kanit:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
+/* ===== พื้นหลัง (แทนโค้ดที่หนูส่งมา) ===== */
 body{
 margin:0;
 font-family:'Kanit',sans-serif;
 
-body{
-margin:0;
-font-family:'Kanit',sans-serif;
-background:linear-gradient(180deg,#ffc1dd,#ffe6f2,#ffffff);
+background:
+linear-gradient(rgba(255,240,248,0.82),rgba(255,255,255,0.9)),
+url("IMG_2047.jpeg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+
 text-align:center;
 color:#444;
 }
-/* กล่องหลัก */
+
+/* ===== กล่องหลัก (Soft Glass Card) ===== */
 .container{
 max-width:420px;
 margin:auto;
-padding:35px 20px;
+padding:38px 24px;
+
+background:rgba(255,255,255,0.82);
+backdrop-filter:blur(14px);
+-webkit-backdrop-filter:blur(14px);
+
+border-radius:28px;
+border:1px solid rgba(255,192,203,.35);
+
+box-shadow:
+0 10px 30px rgba(255,105,180,.15),
+0 0 25px rgba(255,182,193,.15);
+
+margin-top:40px;
+margin-bottom:40px;
+
+animation:fadeIn .8s ease;
 }
 
-/* โปรไฟล์ */
+/* ===== Animation เปิดเว็บ ===== */
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* ===== โปรไฟล์ ===== */
 .profile img{
 width:115px;
 height:115px;
@@ -50,7 +85,7 @@ margin-bottom:28px;
 opacity:.85;
 }
 
-/* หัวข้อ */
+/* ===== หัวข้อ ===== */
 .section{
 margin-top:28px;
 margin-bottom:10px;
@@ -59,27 +94,31 @@ font-size:14px;
 color:#ff4fa3;
 }
 
-/* ปุ่ม */
+/* ===== ปุ่ม ===== */
 .link{
 display:block;
-background:white;
+background:rgba(255,255,255,0.9);
 padding:16px;
 margin:12px 0;
 border-radius:18px;
 text-decoration:none;
 color:#444;
 font-weight:500;
+
+border:1px solid rgba(255,182,210,.35);
+backdrop-filter:blur(6px);
+
 box-shadow:0 6px 16px rgba(255,105,180,.18);
 transition:.25s;
 }
 
 .link:hover{
-transform:translateY(-3px);
+transform:translateY(-4px);
 background:#fff0f7;
-box-shadow:0 10px 20px rgba(255,105,180,.28);
+box-shadow:0 12px 24px rgba(255,105,180,.28);
 }
 
-/* footer */
+/* ===== footer ===== */
 .footer{
 margin-top:35px;
 font-size:12px;
@@ -107,15 +146,14 @@ opacity:.6;
  เติมเกม / สั่งซื้อทันที
 </a>
 
-<a class="link" href="https://myshop-24hour.github.io/kanthimas.github.io/index.html" target="_blank">
+<a class="link" href="https://myshop-24hour.github.io/Treerat/" target="_blank">
  ดูสินค้า
 </a>
-
 
 <div class="section">💬 ติดต่อ</div>
 
 <a class="link" href="https://line.me/" target="_blank">
- LINE 
+ LINE
 </a>
 
 <a class="link" href="https://www.facebook.com/share/188cBudxEq/?mibextid=wwXIfr" target="_blank">
@@ -123,15 +161,15 @@ opacity:.6;
 </a>
 
 <a class="link" href="#">
- TikTok /ยังไม่ได้ใส่ลิ้งค์/
+ TikTok (กำลังเพิ่ม)
 </a>
 
-<a class="link" href="https://www.instagram.com/vxzue.m?igsh=MXNramJ2NDVpcnllZA%3D%3D&utm_source=qr">
+<a class="link" href="https://www.instagram.com/vxzue.m" target="_blank">
  Instagram
 </a>
 
 <div class="footer">
-© 2026 Candy Shop — รับทำเว็บ
+© 2026 Candy Shop — LinkBio
 </div>
 
 </div>
