@@ -10,44 +10,67 @@
 
 <style>
 
-/* ===== BODY ===== */
+/* ===== พื้นหลัง (แทนโค้ดที่หนูส่งมา) ===== */
 body{
 margin:0;
 font-family:'Kanit',sans-serif;
 
-background:linear-gradient(
-180deg,
-#ffc1dd 0%,
-#ffe6f2 45%,
-#ffffff 100%
-);
+background:
+linear-gradient(rgba(255,240,248,0.82),rgba(255,255,255,0.9)),
+url("IMG_2047.jpeg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
 
 text-align:center;
 color:#444;
-overflow-x:hidden;
-
-animation:pageFade 1.2s ease;
 }
 
-
-/* ===== CONTAINER ===== */
+/* ===== กล่องหลัก (Soft Glass Card) ===== */
 .container{
 max-width:420px;
-margin:0 auto;
-padding:40px 22px;
+margin:auto;
+padding:38px 24px;
+
+background:rgba(255,255,255,0.82);
+backdrop-filter:blur(14px);
+-webkit-backdrop-filter:blur(14px);
+
+border-radius:28px;
+border:1px solid rgba(255,192,203,.35);
+
+box-shadow:
+0 10px 30px rgba(255,105,180,.15),
+0 0 25px rgba(255,182,193,.15);
+
+margin-top:40px;
+margin-bottom:40px;
+
+animation:fadeIn .8s ease;
 }
 
+/* ===== Animation เปิดเว็บ ===== */
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
 
-/* ===== PROFILE ===== */
+/* ===== โปรไฟล์ ===== */
 .profile img{
 width:115px;
 height:115px;
 border-radius:50%;
 object-fit:cover;
 border:5px solid #fff;
-box-shadow:0 10px 25px rgba(255,105,180,.25);
-
-animation:popIn .9s ease;
+box-shadow:0 8px 20px rgba(255,105,180,.25);
 }
 
 h1{
@@ -62,71 +85,44 @@ margin-bottom:28px;
 opacity:.85;
 }
 
-
-/* ===== SECTION ===== */
+/* ===== หัวข้อ ===== */
 .section{
-margin-top:30px;
-margin-bottom:12px;
+margin-top:28px;
+margin-bottom:10px;
 font-weight:600;
 font-size:14px;
 color:#ff4fa3;
-letter-spacing:.5px;
 }
 
-
-/* ===== LINK BUTTON ===== */
+/* ===== ปุ่ม ===== */
 .link{
 display:block;
+background:rgba(255,255,255,0.9);
 padding:16px;
-margin:14px 0;
-border-radius:999px;
-
-background:white;
+margin:12px 0;
+border-radius:18px;
 text-decoration:none;
-color:#ff4fa3;
+color:#444;
 font-weight:500;
 
-box-shadow:0 8px 22px rgba(255,105,180,.18);
+border:1px solid rgba(255,182,210,.35);
+backdrop-filter:blur(6px);
 
-transition:all .3s ease;
+box-shadow:0 6px 16px rgba(255,105,180,.18);
+transition:.25s;
 }
 
 .link:hover{
-transform:translateY(-5px) scale(1.04);
-box-shadow:0 15px 35px rgba(255,105,180,.28);
+transform:translateY(-4px);
 background:#fff0f7;
+box-shadow:0 12px 24px rgba(255,105,180,.28);
 }
 
-
-/* ===== FOOTER ===== */
+/* ===== footer ===== */
 .footer{
-margin-top:40px;
+margin-top:35px;
 font-size:12px;
 opacity:.6;
-}
-
-
-/* ===== ANIMATIONS ===== */
-@keyframes pageFade{
-from{
-opacity:0;
-transform:translateY(25px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-@keyframes popIn{
-from{
-opacity:0;
-transform:scale(.85);
-}
-to{
-opacity:1;
-transform:scale(1);
-}
 }
 
 </style>
@@ -144,20 +140,20 @@ transform:scale(1);
 </div>
 </div>
 
-<div class="section">บริการหลัก</div>
+<div class="section"> บริการหลัก</div>
 
 <a class="link" href="https://line.me/ti/p/glZBiX3z89" target="_blank">
 เติมเกม / สั่งซื้อทันที
 </a>
 
 <a class="link" href="https://myshop-24hour.github.io/Treerat/" target="_blank">
-ดูสินค้า
+ ดูสินค้า
 </a>
 
 <div class="section">💬 ติดต่อ</div>
 
 <a class="link" href="https://line.me/" target="_blank">
-LINE
+ LINE /ยังไม่เพิ่ม/
 </a>
 
 <a class="link" href="https://www.facebook.com/share/188cBudxEq/?mibextid=wwXIfr" target="_blank">
@@ -165,11 +161,11 @@ Facebook
 </a>
 
 <a class="link" href="#">
-TikTok (กำลังเพิ่ม)
+ TikTok /ยังไม่เพิ่ม/
 </a>
 
 <a class="link" href="https://www.instagram.com/vxzue.m" target="_blank">
-Instagram
+ Instagram
 </a>
 
 <div class="footer">
