@@ -10,20 +10,25 @@
 
 <style>
 
-.container{
-max-width:420px;
-margin:auto;
-padding:35px 20px;
+/* ===== พื้นหลัง ===== */
+body{
+margin:0;
+font-family:'Kanit',sans-serif;
+background:linear-gradient(180deg,#ffc1dd,#ffe6f2,#ffffff);
+text-align:center;
+color:#444;
+overflow-x:hidden;
 }
-/* ===== กล่องหลัก (Soft Glass Card) ===== */
+
+/* ===== กล่องหลัก ===== */
 .container{
+position:relative;
 max-width:420px;
 margin:auto;
 padding:38px 24px;
 
 background:rgba(255,255,255,0.82);
 backdrop-filter:blur(14px);
--webkit-backdrop-filter:blur(14px);
 
 border-radius:28px;
 border:1px solid rgba(255,192,203,.35);
@@ -35,22 +40,66 @@ box-shadow:
 margin-top:40px;
 margin-bottom:40px;
 
-animation:fadeIn .8s ease;
+animation:pageReveal 1s ease;
 }
 
-/* ===== Animation เปิดเว็บ ===== */
-@keyframes fadeIn{
-from{
+/* ===== เปิดเว็บ ===== */
+@keyframes pageReveal{
+0%{
 opacity:0;
-transform:translateY(20px);
+transform:translateY(40px) scale(.96);
+filter:blur(8px);
 }
-to{
+100%{
 opacity:1;
-transform:translateY(0);
+transform:translateY(0) scale(1);
+filter:blur(0);
 }
+}
+
+/* ===== ONLINE STATUS ===== */
+.online-status{
+position:absolute;
+top:18px;
+left:22px;
+
+background:rgba(255,255,255,.9);
+padding:6px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:500;
+
+display:flex;
+align-items:center;
+gap:6px;
+
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.dot{
+width:8px;
+height:8px;
+border-radius:50%;
+}
+
+.online{ background:#22c55e; }
+.offline{ background:#a3a3a3; }
+
+.pulse{
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(34,197,94,.6);}
+70%{box-shadow:0 0 0 8px rgba(34,197,94,0);}
+100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}
 }
 
 /* ===== โปรไฟล์ ===== */
+.profile{
+animation:floatSoft 4s ease-in-out infinite;
+}
+
 .profile img{
 width:115px;
 height:115px;
@@ -58,6 +107,11 @@ border-radius:50%;
 object-fit:cover;
 border:5px solid #fff;
 box-shadow:0 8px 20px rgba(255,105,180,.25);
+}
+
+@keyframes floatSoft{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-6px);}
 }
 
 h1{
@@ -96,13 +150,30 @@ border:1px solid rgba(255,182,210,.35);
 backdrop-filter:blur(6px);
 
 box-shadow:0 6px 16px rgba(255,105,180,.18);
-transition:.25s;
+
+opacity:0;
+transform:translateY(25px);
+animation:linkShow .7s ease forwards;
+}
+
+.link:nth-of-type(1){animation-delay:.3s;}
+.link:nth-of-type(2){animation-delay:.45s;}
+.link:nth-of-type(3){animation-delay:.6s;}
+.link:nth-of-type(4){animation-delay:.75s;}
+.link:nth-of-type(5){animation-delay:.9s;}
+.link:nth-of-type(6){animation-delay:1.05s;}
+
+@keyframes linkShow{
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 .link:hover{
-transform:translateY(-4px);
+transform:translateY(-6px) scale(1.02);
 background:#fff0f7;
-box-shadow:0 12px 24px rgba(255,105,180,.28);
+box-shadow:0 14px 28px rgba(255,105,180,.28);
 }
 
 /* ===== footer ===== */
@@ -110,6 +181,12 @@ box-shadow:0 12px 24px rgba(255,105,180,.28);
 margin-top:35px;
 font-size:12px;
 opacity:.6;
+animation:fadeFooter 1.5s ease;
+}
+
+@keyframes fadeFooter{
+from{opacity:0;}
+to{opacity:.6;}
 }
 
 </style>
@@ -119,6 +196,12 @@ opacity:.6;
 
 <div class="container">
 
+<!-- ⭐ ONLINE AUTO -->
+<div class="online-status">
+<span id="statusDot" class="dot"></span>
+<span id="statusText">Checking...</span>
+</div>
+
 <div class="profile">
 <img src="663BD7F6-F626-4873-BCE0-819856CFC4B8.jpeg">
 <h1>🐰 Candy Shop</h1>
@@ -127,20 +210,20 @@ opacity:.6;
 </div>
 </div>
 
-<div class="section"> บริการหลัก</div>
+<div class="section">บริการหลัก</div>
 
 <a class="link" href="https://line.me/ti/p/glZBiX3z89" target="_blank">
 เติมเกม / สั่งซื้อทันที
 </a>
 
 <a class="link" href="https://myshop-24hour.github.io/Treerat/" target="_blank">
- ดูสินค้า
+ดูสินค้า
 </a>
 
 <div class="section">💬 ติดต่อ</div>
 
 <a class="link" href="https://line.me/" target="_blank">
- LINE /ยังไม่เพิ่ม/
+LINE /ยังไม่เพิ่ม/
 </a>
 
 <a class="link" href="https://www.facebook.com/share/188cBudxEq/?mibextid=wwXIfr" target="_blank">
@@ -148,11 +231,11 @@ Facebook
 </a>
 
 <a class="link" href="#">
- TikTok /ยังไม่เพิ่ม/
+TikTok /ยังไม่เพิ่ม/
 </a>
 
 <a class="link" href="https://www.instagram.com/vxzue.m" target="_blank">
- Instagram
+Instagram
 </a>
 
 <div class="footer">
@@ -160,6 +243,35 @@ Facebook
 </div>
 
 </div>
+
+<!-- ===== SCRIPT ONLINE AUTO ===== -->
+<script>
+function updateStatus(){
+
+// เวลาไทย
+const now = new Date();
+const thaiTime = new Date(
+now.toLocaleString("en-US",{timeZone:"Asia/Bangkok"})
+);
+
+const hour = thaiTime.getHours();
+
+const text = document.getElementById("statusText");
+const dot = document.getElementById("statusDot");
+
+// เวลาออนไลน์ 09:00 - 23:00
+if(hour >= 9 && hour < 23){
+text.innerText = "Online now";
+dot.className = "dot online pulse";
+}else{
+text.innerText = "Reply soon";
+dot.className = "dot offline";
+}
+
+}
+
+updateStatus();
+</script>
 
 </body>
 </html>
