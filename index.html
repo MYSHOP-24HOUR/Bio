@@ -15,7 +15,6 @@ body{
 margin:0;
 font-family:'Kanit',sans-serif;
 
-/* พื้นหลัง */
 background-image:url("IMG_2047.jpeg");
 background-size:cover;
 background-position:center;
@@ -27,10 +26,10 @@ color:#444;
 }
 
 
-/* ===== CONTAINER (GLASS CARD) ===== */
+/* ===== GLASS CARD ===== */
 .container{
 max-width:420px;
-margin:auto;
+margin:30px auto;
 padding:35px 20px;
 
 background:rgba(255,255,255,0.75);
@@ -40,18 +39,14 @@ backdrop-filter:blur(14px);
 border-radius:25px;
 box-shadow:0 15px 40px rgba(255,105,180,.18);
 
-margin-top:30px;
-margin-bottom:30px;
-
 position:relative;
 overflow:hidden;
 
-/* LEVEL 5 animation */
 animation:fadeUp 1s ease;
 }
 
 
-/* ===== GLASS LIGHT EFFECT (LEVEL 4) ===== */
+/* light glow effect */
 .container::before{
 content:"";
 position:absolute;
@@ -72,68 +67,7 @@ pointer-events:none;
 }
 
 
-/* ===== PROFILE IMAGE ===== */
-.profile-img{
-width:110px;
-height:110px;
-border-radius:50%;
-object-fit:cover;
-margin-bottom:10px;
-
-box-shadow:0 8px 20px rgba(255,105,180,.25);
-}
-
-
-/* ===== TITLE ===== */
-h1{
-margin:10px 0 5px;
-color:#ff4fa3;
-font-weight:600;
-}
-
-p{
-margin-bottom:20px;
-font-size:14px;
-opacity:.8;
-}
-
-
-/* ===== LINK BUTTON (LEVEL 3 INTERACTIVE) ===== */
-.link{
-display:block;
-padding:14px;
-margin:12px 0;
-border-radius:15px;
-
-background:linear-gradient(135deg,#ffd6ec,#ffeaf5);
-text-decoration:none;
-color:#ff4fa3;
-font-weight:500;
-
-box-shadow:0 5px 15px rgba(255,105,180,.15);
-transition:all .3s ease;
-}
-
-
-/* Hover / Tap Effect */
-.link:hover{
-transform:translateY(-4px) scale(1.03);
-box-shadow:0 12px 28px rgba(255,105,180,.28);
-}
-
-
-/* ===== OPEN ANIMATION ===== */
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-/* ===== โปรไฟล์ ===== */
+/* ===== PROFILE ===== */
 .profile img{
 width:115px;
 height:115px;
@@ -155,7 +89,8 @@ margin-bottom:28px;
 opacity:.85;
 }
 
-/* ===== หัวข้อ ===== */
+
+/* ===== SECTION ===== */
 .section{
 margin-top:28px;
 margin-bottom:10px;
@@ -164,35 +99,48 @@ font-size:14px;
 color:#ff4fa3;
 }
 
-/* ===== ปุ่ม ===== */
+
+/* ===== LINK BUTTON ===== */
 .link{
 display:block;
-background:rgba(255,255,255,0.9);
 padding:16px;
 margin:12px 0;
 border-radius:18px;
+
+background:linear-gradient(135deg,#ffd6ec,#fff0f7);
 text-decoration:none;
-color:#444;
+color:#ff4fa3;
 font-weight:500;
 
-border:1px solid rgba(255,182,210,.35);
-backdrop-filter:blur(6px);
-
 box-shadow:0 6px 16px rgba(255,105,180,.18);
-transition:.25s;
+transition:all .3s ease;
 }
 
 .link:hover{
-transform:translateY(-4px);
-background:#fff0f7;
-box-shadow:0 12px 24px rgba(255,105,180,.28);
+transform:translateY(-4px) scale(1.03);
+box-shadow:0 12px 28px rgba(255,105,180,.28);
 }
 
-/* ===== footer ===== */
+
+/* ===== FOOTER ===== */
 .footer{
 margin-top:35px;
 font-size:12px;
 opacity:.6;
+}
+
+
+/* ===== OPEN ANIMATION ===== */
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+
 }
 
 </style>
@@ -210,32 +158,32 @@ opacity:.6;
 </div>
 </div>
 
-<div class="section"> บริการหลัก</div>
+<div class="section">บริการหลัก</div>
 
 <a class="link" href="https://line.me/ti/p/glZBiX3z89" target="_blank">
- เติมเกม / สั่งซื้อทันที
+เติมเกม / สั่งซื้อทันที
 </a>
 
 <a class="link" href="https://myshop-24hour.github.io/Treerat/" target="_blank">
- ดูสินค้า
+ดูสินค้า
 </a>
 
 <div class="section">💬 ติดต่อ</div>
 
 <a class="link" href="https://line.me/" target="_blank">
- LINE
+LINE
 </a>
 
 <a class="link" href="https://www.facebook.com/share/188cBudxEq/?mibextid=wwXIfr" target="_blank">
- Facebook
+Facebook
 </a>
 
 <a class="link" href="#">
- TikTok (กำลังเพิ่ม)
+TikTok (กำลังเพิ่ม)
 </a>
 
 <a class="link" href="https://www.instagram.com/vxzue.m" target="_blank">
- Instagram
+Instagram
 </a>
 
 <div class="footer">
