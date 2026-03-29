@@ -10,15 +10,13 @@
 
 <style>
 
-/* ===== พื้นหลัง (แทนโค้ดที่หนูส่งมา) ===== */
+/* ===== BODY ===== */
 body{
 margin:0;
 font-family:'Kanit',sans-serif;
 
-background:
-linear-gradient(rgba(255,240,248,0.82),rgba(255,255,255,0.9)),
-url("IMG_2047.jpeg");
-
+/* พื้นหลัง */
+background-image:url("IMG_2047.jpeg");
 background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
@@ -28,41 +26,113 @@ text-align:center;
 color:#444;
 }
 
-/* ===== กล่องหลัก (Soft Glass Card) ===== */
+
+/* ===== CONTAINER (GLASS CARD) ===== */
 .container{
 max-width:420px;
 margin:auto;
-padding:38px 24px;
+padding:35px 20px;
 
-background:rgba(255,255,255,0.82);
+background:rgba(255,255,255,0.75);
 backdrop-filter:blur(14px);
 -webkit-backdrop-filter:blur(14px);
 
-border-radius:28px;
-border:1px solid rgba(255,192,203,.35);
+border-radius:25px;
+box-shadow:0 15px 40px rgba(255,105,180,.18);
 
-box-shadow:
-0 10px 30px rgba(255,105,180,.15),
-0 0 25px rgba(255,182,193,.15);
+margin-top:30px;
+margin-bottom:30px;
 
-margin-top:40px;
-margin-bottom:40px;
+position:relative;
+overflow:hidden;
 
-animation:fadeIn .8s ease;
+/* LEVEL 5 animation */
+animation:fadeUp 1s ease;
 }
 
-/* ===== Animation เปิดเว็บ ===== */
-@keyframes fadeIn{
+
+/* ===== GLASS LIGHT EFFECT (LEVEL 4) ===== */
+.container::before{
+content:"";
+position:absolute;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+
+background:linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.35),
+transparent
+);
+
+transform:rotate(25deg);
+pointer-events:none;
+}
+
+
+/* ===== PROFILE IMAGE ===== */
+.profile-img{
+width:110px;
+height:110px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:10px;
+
+box-shadow:0 8px 20px rgba(255,105,180,.25);
+}
+
+
+/* ===== TITLE ===== */
+h1{
+margin:10px 0 5px;
+color:#ff4fa3;
+font-weight:600;
+}
+
+p{
+margin-bottom:20px;
+font-size:14px;
+opacity:.8;
+}
+
+
+/* ===== LINK BUTTON (LEVEL 3 INTERACTIVE) ===== */
+.link{
+display:block;
+padding:14px;
+margin:12px 0;
+border-radius:15px;
+
+background:linear-gradient(135deg,#ffd6ec,#ffeaf5);
+text-decoration:none;
+color:#ff4fa3;
+font-weight:500;
+
+box-shadow:0 5px 15px rgba(255,105,180,.15);
+transition:all .3s ease;
+}
+
+
+/* Hover / Tap Effect */
+.link:hover{
+transform:translateY(-4px) scale(1.03);
+box-shadow:0 12px 28px rgba(255,105,180,.28);
+}
+
+
+/* ===== OPEN ANIMATION ===== */
+@keyframes fadeUp{
 from{
 opacity:0;
-transform:translateY(20px);
+transform:translateY(30px);
 }
 to{
 opacity:1;
 transform:translateY(0);
 }
 }
-
 /* ===== โปรไฟล์ ===== */
 .profile img{
 width:115px;
